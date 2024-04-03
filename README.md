@@ -5,4 +5,5 @@ Collection of scripts for automating Droptop devices to display specific informa
 <br/>
 <br/>
 EMAIL = 'YOUREMAIL@EXAMPLE.COM'
+<br/>
 PASSWORD = 'YOURPASSWORD'
