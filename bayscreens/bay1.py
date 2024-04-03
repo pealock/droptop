@@ -21,7 +21,7 @@ wait = WebDriverWait(driver, 10)
 
 driver.get("https://droptop-app.com")
 
-driver.find_element("xpath", "//input[@type='email']").send_keys(emailLogin)
+driver.find_element("xpath", "/html/body/div[1]/div/div/div[3]/form/div[1]/input").send_keys(emailLogin)
 driver.find_element("xpath", "//input[@type='password']").send_keys(passwordLogin)
 driver.find_element("xpath", "//input[@type='submit']").click()
 
@@ -47,3 +47,5 @@ baySelector3 = driver.find_element("xpath", bay4)
 driver.execute_script("arguments[0].click();", baySelector3)
 
 driver.find_element("xpath", "/html/body/div[1]/div/div[4]/div[2]/div[7]/div/div[2]/div[1]/div[6]/button").click()
+
+driver.execute_script("document.body.style.zoom='125%'")
