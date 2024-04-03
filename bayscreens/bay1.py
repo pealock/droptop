@@ -5,7 +5,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 from dotenv import load_dotenv
 from bayID import bay1, bay2, bay3, bay4
 from chromeOptions import options
@@ -14,7 +13,9 @@ load_dotenv()
 emailLogin = os.getenv("EMAIL")
 passwordLogin = os.getenv("PASSWORD")
 
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
+service = Service(executable_path='/usr/bin/chromedriver')
+
+driver = webdriver.Chrome(service=service,
                           options=options)
 
 wait = WebDriverWait(driver, 10)
