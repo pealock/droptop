@@ -5,18 +5,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 from dotenv import load_dotenv
 from bayID import bay1, bay2, bay3, bay4
+from chromeOptions import options
 
 load_dotenv()
 emailLogin = os.getenv("EMAIL")
 passwordLogin = os.getenv("PASSWORD")
-
-options = Options()
-options.add_experimental_option("detach", True)
-options.add_argument("--kiosk")
 
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
                           options=options)
