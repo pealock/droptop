@@ -1,4 +1,5 @@
 import os
+import sys
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -13,7 +14,10 @@ load_dotenv()
 emailLogin = os.getenv("EMAIL")
 passwordLogin = os.getenv("PASSWORD")
 
-service = Service(executable_path='/usr/bin/chromedriver')
+if 'linux' in sys.platform:
+    service = Service(executable_path='/usr/bin/chromedriver')
+else:
+    service = Service()
 
 driver = webdriver.Chrome(service=service,
                           options=options)
