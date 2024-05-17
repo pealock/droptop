@@ -1,1 +1,1 @@
-DISPLAY=:0 ~/.py /bin/python3 ~/droptop/scripts/bayDashboard.py
+DISPLAY=:0 ~/.py/bin/python3 ~/droptop/scripts/bayDashboard.py
