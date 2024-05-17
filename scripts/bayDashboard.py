@@ -90,3 +90,6 @@ if "bay4" in socket.gethostname():
 
 # Click submit
 driver.find_element("xpath", "/html/body/div[1]/div/div[4]/div[2]/div[7]/div/div[2]/div[1]/div[6]/button").click()
+
+# Zoom In
+driver.execute_script("document.body.style.zoom = '1.25'")
