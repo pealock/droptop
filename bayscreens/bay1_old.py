@@ -1,4 +1,5 @@
 import os
+import sys
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -13,7 +14,10 @@ load_dotenv()
 emailLogin = os.getenv("EMAIL")
 passwordLogin = os.getenv("PASSWORD")
 
-service = Service(executable_path='/usr/bin/chromedriver')
+if 'linux' in sys.platform:
+    service = Service(executable_path='/usr/bin/chromedriver')
+else:
+    service = Service()
 
 driver = webdriver.Chrome(service=service,
                           options=options)
@@ -40,9 +44,9 @@ driver.execute_script("arguments[0].click();", baySelectWindow)
 
 wait.until(EC.presence_of_element_located((By.XPATH, bay1)))
 
-baySelector1 = driver.find_element("xpath", bay1)
+baySelector1 = driver.find_element("xpath", bay2)
 driver.execute_script("arguments[0].click();", baySelector1)
-baySelector2 = driver.find_element("xpath", bay2)
+baySelector2 = driver.find_element("xpath", bay3)
 driver.execute_script("arguments[0].click();", baySelector2)
 baySelector3 = driver.find_element("xpath", bay4)
 driver.execute_script("arguments[0].click();", baySelector3)

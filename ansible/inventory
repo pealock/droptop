@@ -1,17 +1,9 @@
-[bays]
-0.0.0.0
-0.0.0.1
-0.0.0.2
-0.0.0.3
-
-[bay1]
-0.0.0.1
-
-[bay2]
-0.0.0.2
-
-[bay3]
-0.0.0.3
-
-[bay4]
-0.0.0.4
+#inventory
+---
+server:
+  hosts:
+    new-server:
+      ansible_host:
+      ansible_user:
+      ansible_password:
+      ansible_become_password:
