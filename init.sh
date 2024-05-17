@@ -5,6 +5,20 @@ echo
 echo
 echo
 
+# Apt update
+echo "Updating repositories"
+apt update
+echo
+echo
+echo
+
+# Git clone
+echo "Cloning Github repository
+cd ~ git clone 
+echo
+echo
+echo
+
 # Set up Python environment
 echo "Setting up Python environment"
 python -m venv ~/.py
