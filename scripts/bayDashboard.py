@@ -11,6 +11,7 @@ from bayID import bay1, bay2, bay3, bay4
 from chromeOptions import options
 
 
+
 # Load Creds
 load_dotenv()
 emailLogin = os.getenv("EMAIL")
