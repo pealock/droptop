@@ -6,9 +6,17 @@ echo
 echo
 
 # Set up Python environment
-echo "Setting up Python environment"
-python -m venv ~/.py
-~/.py/bin/pip install selenium python-dotenv
+echo "Checking for Python environment"
+echo
+echo
+PYTHON=~/.py
+if test -d "$PYTHON"; then
+  echo "Python environment already configured"
+else
+  echo "Setting up Python environment"
+  python -m venv ~/.py
+  ~/.py/bin/pip install selenium python-dotenv
+fi
 echo
 echo
 echo
@@ -43,7 +51,6 @@ echo
 # Test launch
 echo "Testing dashboard"
 DISPLAY=:0 ~/.py/bin/python3 ~/droptop/scripts/bayDashboard.py
-wait 30s
 killall chromium-browser
 echo
 echo
