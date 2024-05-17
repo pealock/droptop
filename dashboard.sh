@@ -1,1 +1,1 @@
-DISPLAY=:0 ~/.py/bin/python3 ~/droptop/scripts/bayDashboard.py
+DISPLAY=:0 pcmanfm --set-wallpaper ~/droptop/images/"$HOSTNAME".jpg && DISPLAY=:0 ~/.py/bin/python3 ~/droptop/scripts/bayDashboard.py
