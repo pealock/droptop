@@ -1,9 +1,0 @@
-#inventory
----
-server:
-  hosts:
-    new-server:
-      ansible_host:
-      ansible_user:
-      ansible_password:
-      ansible_become_password:
