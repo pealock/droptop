@@ -53,6 +53,10 @@ if test -f "$CREDS"; then
   echo "Credentials found"
 else
   echo "Credentials not found"
+  echo
+  echo
+  echo
+  sleep 3
   echo "Please enter your Droptop credentials"
   echo
   read -p "Email:" email
