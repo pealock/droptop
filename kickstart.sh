@@ -1,6 +1,15 @@
 #!/bin/bash
+# This script initializes the dashboards
+# Use it to fully configure a dashboard from a cold boot
 
 echo "Droptop Dashboards V1.0 by AMP Studios"
+echo
+echo
+echo
+
+# Git clone
+echo "Cloning git repository into home directory"
+git clone https://github.com/pealock/scripts.git ~/droptop
 echo
 echo
 echo
