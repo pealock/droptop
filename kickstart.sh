@@ -9,7 +9,7 @@ echo
 
 # Git clone
 echo "Cloning git repository into home directory"
-git clone https://github.com/pealock/scripts.git ~/droptop
+git clone https://github.com/pealock/droptop.git ~/droptop
 echo
 echo
 echo
