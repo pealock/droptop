@@ -63,6 +63,10 @@ sleep 3
 echo "Checking for credentials"
 echo
 echo
+echo
+
+sleep 3
+
 CREDS=~/droptop/.env
 if test -f "$CREDS"; then
   echo "Credentials found"
