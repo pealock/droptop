@@ -9,15 +9,29 @@ echo
 
 sleep 3
 
-# Git clone
-echo "Cloning git repository into home directory"
+# Check for git repo, clone if not found
+echo "Checking for Github repository"
 echo
 echo
 echo
-git clone https://github.com/pealock/droptop.git ~/droptop
-echo
-echo
-echo
+sleep 3
+
+GITHUB=~/droptop
+if test -d "$GITHUB"; then
+  echo "Github repository already configured!"
+  echo
+  echo
+  echo
+else
+  echo "Cloning git repository into home directory"
+  echo
+  echo
+  echo
+  git clone https://github.com/pealock/droptop.git ~/droptop
+  echo
+  echo
+  echo
+fi
 
 sleep 3
 
@@ -52,6 +66,9 @@ echo
 CREDS=~/droptop/.env
 if test -f "$CREDS"; then
   echo "Credentials found"
+  echo
+  echo
+  echo
 else
   echo "Credentials not found"
   echo
@@ -83,7 +100,7 @@ echo "Testing display output"
 
 sleep 3
 
-DISPLAY=:0 ffplay -fs -autoexit ~/droptop/videos/catjam.mp4
+DISPLAY=:0 ffplay -fs -t 3 -autoexit ~/droptop/videos/catjam.mp4
 
 echo
 echo
