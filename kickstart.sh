@@ -25,7 +25,8 @@ sleep 3
 echo "Checking for Python environment"
 echo
 echo
-echo
+sleep 3
+
 PYTHON=~/.py
 if test -d "$PYTHON"; then
   echo "Python environment already configured!"
@@ -72,6 +73,18 @@ sleep 3
 # Set bg
 echo "Setting background"
 DISPLAY=:0 pcmanfm --set-wallpaper ~/droptop/images/"$HOSTNAME".jpg
+echo
+echo
+echo
+
+sleep 3
+
+echo "Testing display output"
+
+sleep 3
+
+DISPLAY=:0 ffplay -fs ~/droptop/videos/catjam.mp4
+
 echo
 echo
 echo
