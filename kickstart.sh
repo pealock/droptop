@@ -83,7 +83,7 @@ echo "Testing display output"
 
 sleep 3
 
-DISPLAY=:0 ffplay -fs ~/droptop/videos/catjam.mp4
+DISPLAY=:0 ffplay -fs -autoexit ~/droptop/videos/catjam.mp4
 
 echo
 echo
