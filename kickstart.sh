@@ -39,6 +39,7 @@ sleep 3
 echo "Checking for Python environment"
 echo
 echo
+echo
 sleep 3
 
 PYTHON=~/.py
