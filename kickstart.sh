@@ -14,7 +14,7 @@ echo "Checking for Github repository"
 echo
 echo
 echo
-sleep 3
+sleep 1
 
 GITHUB=~/droptop
 if test -d "$GITHUB"; then
@@ -40,7 +40,7 @@ echo "Checking for Python environment"
 echo
 echo
 echo
-sleep 3
+sleep 1
 
 PYTHON=~/.py
 if test -d "$PYTHON"; then
@@ -66,7 +66,7 @@ echo
 echo
 echo
 
-sleep 3
+sleep 1
 
 CREDS=~/droptop/.env
 if test -f "$CREDS"; then
@@ -103,9 +103,9 @@ sleep 3
 
 echo "Testing display output"
 
-sleep 3
+sleep 1
 
-DISPLAY=:0 ffplay -fs -t 3 -autoexit ~/droptop/videos/catjam.mp4
+DISPLAY=:0 ffplay -fs -t 5 -autoexit ~/droptop/videos/catjam.mp4
 
 echo
 echo
