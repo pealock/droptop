@@ -125,6 +125,16 @@ sleep 3
 
 echo "Setting up boot environment"
 echo "DISPLAY=:0 ~/.py/bin/python3 ~/droptop/scripts/bayDashboard.py" >> ~/.bashrc
+echo
+echo
+echo
 
+sleep 3
+
+echo "Removing kickstart script"
+rm ~/kickstart.sh
+echo
+echo
+echo
 
 
