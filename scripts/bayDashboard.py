@@ -19,8 +19,8 @@ passwordLogin = os.getenv("PASSWORD")
 
 # Define targets
 emailForm = "/html/body/div[1]/div/div/div[3]/form/div[1]/input"
-baySelect = "/html/body/div[1]/div/div[4]/div[2]/div[4]/i"
-baySelectConfirm = "/html/body/div[1]/div/div[4]/div[2]/div[7]/div/div[2]/div[1]/div[6]/button"
+baySelect = "/html/body/div[1]/div/div[4]/div/div[2]/i[1]"
+baySelectConfirm = "/html/body/div[1]/div/div[4]/div/div[7]/div/div[2]/div[1]/div[6]/button"
 
 # Load webdriver
 if 'linux' in sys.platform:
@@ -44,7 +44,7 @@ driver.find_element("xpath", "//input[@type='submit']").click()
 wait.until(EC.presence_of_element_located((By.XPATH, "//div/select")))
 
 # Site select
-siteSelect = Select(driver.find_element("xpath","//div/select"))
+siteSelect = Select(driver.find_element("xpath", "//div/select"))
 siteSelect.select_by_index(1)
 
 # Dashboard Fullscreen
@@ -90,7 +90,7 @@ if "bay4" in socket.gethostname():
 
 
 # Click submit
-driver.find_element("xpath", "/html/body/div[1]/div/div[4]/div[2]/div[7]/div/div[2]/div[1]/div[6]/button").click()
+driver.find_element("xpath", baySelectConfirm).click()
 
 # Zoom In
 driver.execute_script("document.body.style.zoom = '1.25'")
