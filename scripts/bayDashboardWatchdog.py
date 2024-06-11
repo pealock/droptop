@@ -1,7 +1,9 @@
 import os
 import sys
 import socket
+import time
 from selenium import webdriver
+from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -9,8 +11,6 @@ from selenium.webdriver.chrome.service import Service
 from dotenv import load_dotenv
 from bayID import bay1, bay2, bay3, bay4
 from chromeOptions import options
-
-
 
 # Load Creds
 load_dotenv()
@@ -37,13 +37,19 @@ wait = WebDriverWait(driver, 10)
 # Initial website pull
 driver.get("https://droptop-app.com")
 
+
 # Login flow
-driver.find_element("xpath", emailForm).send_keys(emailLogin)
-driver.find_element("xpath", "//input[@type='password']").send_keys(passwordLogin)
-driver.find_element("xpath", "//input[@type='submit']").click()
-wait.until(EC.presence_of_element_located((By.XPATH, "//div/select")))
+def loginflow():
+    driver.find_element("xpath", emailForm).send_keys(emailLogin)
+    driver.find_element("xpath", "//input[@type='password']").send_keys(passwordLogin)
+    driver.find_element("xpath", "//input[@type='submit']").click()
+
+
+loginflow()
+
 
 # Site select
+wait.until(EC.presence_of_element_located((By.XPATH, "//div/select")))
 siteSelect = Select(driver.find_element("xpath", "//div/select"))
 siteSelect.select_by_index(1)
 
@@ -88,10 +94,13 @@ if "bay4" in socket.gethostname():
     driver.execute_script("arguments[0].click();", bayDeselect2)
     driver.execute_script("arguments[0].click();", bayDeselect3)
 
-
 # Click submit
 driver.find_element("xpath", baySelectConfirm).click()
 
 # Zoom In
 driver.execute_script("document.body.style.zoom = '1.25'")
 
+
+# Watchdog
+while driver.find_element("xpath", "/html/body/div[1]/div/div[4]/div[2]/div[2]/i[2]").is_displayed():
+    time.sleep(10)
