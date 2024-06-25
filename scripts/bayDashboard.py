@@ -1,6 +1,7 @@
 import os
 import sys
 import socket
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
@@ -36,6 +37,8 @@ wait = WebDriverWait(driver, 10)
 
 # Initial website pull
 driver.get("https://droptop-app.com")
+
+time.sleep(3)
 
 # Login flow
 driver.find_element("xpath", emailForm).send_keys(emailLogin)
