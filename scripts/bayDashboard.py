@@ -44,11 +44,13 @@ time.sleep(3)
 driver.find_element("xpath", emailForm).send_keys(emailLogin)
 driver.find_element("xpath", "//input[@type='password']").send_keys(passwordLogin)
 driver.find_element("xpath", "//input[@type='submit']").click()
-wait.until(EC.presence_of_element_located((By.XPATH, "//div/select")))
+
+time.sleep(4)
 
 # Site select
-siteSelect = Select(driver.find_element("xpath", "//div/select"))
-siteSelect.select_by_index(1)
+driver.find_element("xpath", "/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div[2]/button").click()
+time.sleep(2)
+driver.find_element("xpath", "/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div/div/div/div/button").click()
 
 # Dashboard Fullscreen
 driver.get("https://droptop-app.com/dash/active_orders?t=fullscreen")
