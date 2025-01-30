@@ -12,7 +12,6 @@ from bayID import bay1, bay2, bay3, bay4
 from chromeOptions import options
 
 
-
 # Load Creds
 load_dotenv()
 emailLogin = os.getenv("EMAIL")
@@ -50,7 +49,7 @@ time.sleep(4)
 # Site select
 driver.find_element("xpath", "/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div[2]/button").click()
 time.sleep(2)
-driver.find_element("xpath", "/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div/div/div/div/button").click()
+driver.find_element("xpath", "/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div/div/div[2]/div/div/button").click()
 
 # Dashboard Fullscreen
 driver.get("https://droptop-app.com/dash/active_orders?t=fullscreen")
