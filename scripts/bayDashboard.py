@@ -19,8 +19,8 @@ passwordLogin = os.getenv("PASSWORD")
 
 # Define targets
 emailForm = "/html/body/div[1]/div/div/div[3]/form/div[1]/input"
-baySelect = "/html/body/div[1]/div/div[4]/div/div[2]/i[1]"
-baySelectConfirm = "/html/body/div[1]/div/div[4]/div/div[7]/div/div[2]/div[1]/div[6]/button"
+baySelect = "/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div[2]/button"
+baySelectConfirm = "/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div/div/div[2]/div/div/button"
 
 # Load webdriver
 if 'linux' in sys.platform:
