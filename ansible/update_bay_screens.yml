@@ -1,0 +1,17 @@
+- name: Update all bay screen servers
+  hosts: all
+  become: yes
+  tasks:
+    - name: Update apt package cache
+      ansible.builtin.apt:
+        update_cache: yes
+
+    - name: Upgrade all apt packages
+      ansible.builtin.apt:
+        upgrade: dist
+
+    - name: Remove unnecessary packages
+      ansible.builtin.apt:
+        autoremove: yes
+        autoclean: yes
+

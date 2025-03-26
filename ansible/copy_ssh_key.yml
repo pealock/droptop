@@ -1,0 +1,10 @@
+- name: Copy public key to group of servers
+  hosts: all
+  become: yes
+  tasks:
+    - name: Copy SSH public key to authorized_keys
+      ansible.builtin.authorized_key:
+        user: "{{ ansible_user }}"
+        state: present
+        key: "{{ lookup('file', '~/Downloads/id_ed25519.pub') }}"
+        manage_dir: yes

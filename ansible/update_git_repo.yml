@@ -1,0 +1,16 @@
+- name: Update Git repository on remote servers
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure git is installed
+      ansible.builtin.package:
+        name: git
+        state: present
+
+    - name: Update Git repository in a specific directory
+      ansible.builtin.git:
+        repo: 'https://github.com/pealock/droptop.git'
+        dest: '~/droptop/'
+        version: 'main'
+        update: yes
+        force: yes
