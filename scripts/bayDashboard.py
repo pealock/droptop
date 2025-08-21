@@ -73,7 +73,7 @@ bayDeselect4 = driver.find_element("xpath", bay4)
 # Deselect unused bays depending on hostname
 
 # Bay 1
-if "raiden.local" in socket.gethostname():
+if "bay1" in socket.gethostname():
     driver.execute_script("arguments[0].click();", bayDeselect2)
     driver.execute_script("arguments[0].click();", bayDeselect3)
     driver.execute_script("arguments[0].click();", bayDeselect4)
