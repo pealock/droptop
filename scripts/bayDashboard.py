@@ -40,11 +40,13 @@ driver.get("https://droptop-app.com")
 time.sleep(3)
 
 # Login flow
-driver.find_element("xpath", emailForm).send_keys(emailLogin)
-driver.find_element("xpath", "/html/body/div[1]/div/div[1]/form/div[1]/button").click()
+driver.find_element("id", "email").send_keys(emailLogin)
+time.sleep(1)
+driver.find_element("id", "continueEmailBtn").click()
 time.sleep(2)
-driver.find_element("xpath", "/html/body/div[1]/div/div[1]/form/div[2]/input").send_keys(passwordLogin)
-driver.find_element("xpath", "/html/body/div[1]/div/div[1]/form/div[2]/div/button[1]").click()
+driver.find_element("id", "passwordInput").send_keys(passwordLogin)
+time.sleep(1)
+driver.find_element("id", "loginBtn").click()
 
 time.sleep(4)
 
