@@ -18,7 +18,7 @@ emailLogin = os.getenv("EMAIL")
 passwordLogin = os.getenv("PASSWORD")
 
 # Define targets
-emailForm = "/html/body/div[1]/div/div/div[3]/form/div[1]/input"
+emailForm = "/html/body/div[1]/div/div[1]/form/div[1]/input"
 baySelect = "/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div[2]/button"
 baySelectConfirm = "/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div/div/div[2]/div/div/button"
 
@@ -41,8 +41,10 @@ time.sleep(3)
 
 # Login flow
 driver.find_element("xpath", emailForm).send_keys(emailLogin)
-driver.find_element("xpath", "//input[@type='password']").send_keys(passwordLogin)
-driver.find_element("xpath", "//input[@type='submit']").click()
+driver.find_element("xpath", "/html/body/div[1]/div/div[1]/form/div[1]/button").click()
+time.sleep(2)
+driver.find_element("xpath", "/html/body/div[1]/div/div[1]/form/div[2]/input").send_keys(passwordLogin)
+driver.find_element("xpath", "/html/body/div[1]/div/div[1]/form/div[2]/div/button[1]").click()
 
 time.sleep(4)
 
