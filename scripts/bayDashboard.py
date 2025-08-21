@@ -19,8 +19,8 @@ passwordLogin = os.getenv("PASSWORD")
 
 # Define targets
 emailForm = "/html/body/div[1]/div/div[1]/form/div[1]/input"
-baySelect = "/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div[2]/button"
-baySelectConfirm = "/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div/div/div[2]/div/div/button"
+baySelect = "/html/body/div[1]/div/div[4]/div/div[2]/i[1]"
+baySelectConfirm = "/html/body/div[1]/div/div[4]/div/div[7]/div/div[2]/div[1]/div[6]/button"
 
 # Load webdriver
 if 'linux' in sys.platform:
@@ -37,7 +37,7 @@ wait = WebDriverWait(driver, 10)
 # Initial website pull
 driver.get("https://droptop-app.com")
 
-time.sleep(3)
+time.sleep(8)
 
 # Login flow
 driver.find_element("id", "email").send_keys(emailLogin)
@@ -73,7 +73,7 @@ bayDeselect4 = driver.find_element("xpath", bay4)
 # Deselect unused bays depending on hostname
 
 # Bay 1
-if "bay1" in socket.gethostname():
+if "raiden.local" in socket.gethostname():
     driver.execute_script("arguments[0].click();", bayDeselect2)
     driver.execute_script("arguments[0].click();", bayDeselect3)
     driver.execute_script("arguments[0].click();", bayDeselect4)
