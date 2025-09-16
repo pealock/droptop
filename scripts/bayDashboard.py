@@ -51,9 +51,11 @@ driver.find_element("id", "loginBtn").click()
 time.sleep(4)
 
 # Site select
-driver.find_element("xpath", "/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div[2]/button").click()
+#driver.find_element("xpath", "/html/body/div[1]/div/div/div[1]/div/div[2]/div[1]/div[2]/button").click()
+driver.find_element(By.CLASS_NAME, "choose_shop").click()
 time.sleep(2)
-driver.find_element("xpath", "/html/body/div[1]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div/div/div[2]/div/div/button").click()
+#driver.find_element("xpath", "/html/body/div[1]/div/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/div/div/div/div/div[2]/div/div/button").click()
+driver.find_element(By.CLASS_NAME, "ShopViewer_row_btn").click()
 
 # Dashboard Fullscreen
 driver.get("https://droptop-app.com/dash/active_orders?t=fullscreen")
