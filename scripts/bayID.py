@@ -1,7 +1,7 @@
-bay1 = "/html/body/div[1]/div/div[4]/div/div[7]/div/div[2]/div[1]/div[2]/div/label"
+bay1 = "//*[contains(text(), 'Bay 1')]"
 
-bay2 = "/html/body/div[1]/div/div[4]/div/div[7]/div/div[2]/div[1]/div[3]/div/label"
+bay2 = "//*[contains(text(), 'Bay 2')]"
 
-bay3 = "/html/body/div[1]/div/div[4]/div/div[7]/div/div[2]/div[1]/div[4]/div/label"
+bay3 = "//*[contains(text(), 'Bay 3')]"
 
-bay4 = "/html/body/div[1]/div/div[4]/div/div[7]/div/div[2]/div[1]/div[5]/div/label"
+bay4 = "//*[contains(text(), 'Bay 4')]"
