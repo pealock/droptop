@@ -41,7 +41,7 @@ wait = WebDriverWait(driver, 10)
 driver.get("https://droptop-app.com")
 
 # Wait up to 10 seconds for the email field to load
-WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "email")))
+WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, "email")))
 # Login flow
 driver.find_element("id", "email").send_keys(emailLogin)
 time.sleep(1)
@@ -53,9 +53,9 @@ driver.find_element("id", "loginBtn").click()
 
 
 # Site select
-WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "choose_shop")))
+WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.CLASS_NAME, "choose_shop")))
 driver.find_element(By.CLASS_NAME, "choose_shop").click()
-WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "ShopViewer_row_btn")))
+WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.CLASS_NAME, "ShopViewer_row_btn")))
 driver.find_element(By.CLASS_NAME, "ShopViewer_row_btn").click()
 
 # Dashboard Fullscreen
