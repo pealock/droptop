@@ -110,9 +110,13 @@ driver.execute_script("document.body.style.zoom = '1.25'")
 # Digital signage loop, hardcoded loop time for now
 if "allbays" in socket.gethostname():
         droptop_window = driver.current_window_handle
+        time.sleep(30)
+        # After 30 seconds, enter while loop
         while True:
             driver.switch_to.new_window("tab")
             driver.get("https://oilstopindustries.com/videos/waiting_room.mp4")
+            # Manually play video
+            driver.execute_script("document.querySelector('video').play();")
             signage_window = driver.current_window_handle
             time.sleep(150)
             driver.close()
