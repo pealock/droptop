@@ -9,5 +9,6 @@ options.add_experimental_option("excludeSwitches", ['enable-automation'])
 options.add_experimental_option("prefs", prefs)
 options.add_argument("--kiosk")
 options.add_argument("--start-maximized")
-options.add_argument("--disable-gpu")
+options.add_argument("--use-gl=egl")
+options.add_argument("--disable-gpu-rasterization")
 
