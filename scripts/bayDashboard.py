@@ -116,7 +116,7 @@ if "allbays" in socket.gethostname():
             driver.switch_to.new_window("tab")
             driver.get("https://oilstopindustries.com/videos/waiting_room.mp4")
             # Manually play video
-            driver.execute_script("document.querySelector('video').play();")
+            # driver.execute_script("document.querySelector('video').play();")
             signage_window = driver.current_window_handle
             time.sleep(150)
             driver.close()
