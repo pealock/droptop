@@ -163,3 +163,5 @@ cython_debug/
 
 ansible/inventory
 ansible/ansible.cfg
+
+.idea
