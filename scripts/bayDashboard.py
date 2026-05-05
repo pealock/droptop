@@ -101,10 +101,20 @@ if "bay4" in socket.gethostname():
     driver.execute_script("arguments[0].click();", bayDeselect2)
     driver.execute_script("arguments[0].click();", bayDeselect3)
 
-
 # Click submit
 driver.find_element("xpath", baySelectConfirm).click()
 
 # Zoom In
 driver.execute_script("document.body.style.zoom = '1.25'")
 
+# Digital signage loop, hardcoded loop time for now
+if "allbays" in socket.gethostname():
+        droptop_window = driver.current_window_handle
+        while True:
+            driver.switch_to.new_window("tab")
+            driver.get("https://oilstopindustries.com/videos/waiting_room.mp4")
+            signage_window = driver.current_window_handle
+            time.sleep(150)
+            driver.close()
+            driver.switch_to.window(droptop_window)
+            time.sleep(30)
