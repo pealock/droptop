@@ -32,7 +32,7 @@ else:
 driver = webdriver.Chrome(service=service, options=options)
 
 # Dev driver
-#driver = webdriver.Chrome()
+# driver = webdriver.Chrome()
 
 # Define timeout
 wait = WebDriverWait(driver, 10)
@@ -41,26 +41,26 @@ wait = WebDriverWait(driver, 10)
 driver.get("https://droptop-app.com")
 
 # Wait up to 10 seconds for the email field to load
-WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, "email")))
+WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.ID, "email")))
 # Login flow
 driver.find_element("id", "email").send_keys(emailLogin)
-time.sleep(1)
+time.sleep(10)
 driver.find_element("id", "continueEmailBtn").click()
-time.sleep(2)
+time.sleep(10)
 driver.find_element("id", "passwordInput").send_keys(passwordLogin)
-time.sleep(1)
+time.sleep(10)
 driver.find_element("id", "loginBtn").click()
 
 
 # Site select
-WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.CLASS_NAME, "choose_shop")))
+WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.CLASS_NAME, "choose_shop")))
 driver.find_element(By.CLASS_NAME, "choose_shop").click()
-WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.CLASS_NAME, "ShopViewer_row_btn")))
+WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.CLASS_NAME, "ShopViewer_row_btn")))
 driver.find_element(By.CLASS_NAME, "ShopViewer_row_btn").click()
 
 # Dashboard Fullscreen
 driver.get("https://droptop-app.com/dash/active_orders?t=fullscreen")
-WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, baySelect)))
+WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.XPATH, baySelect)))
 wait.until(EC.presence_of_element_located((By.XPATH, baySelect)))
 
 
