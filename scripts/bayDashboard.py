@@ -40,15 +40,26 @@ wait = WebDriverWait(driver, 10)
 # Initial website pull
 driver.get("https://droptop-app.com")
 
-# Wait up to 10 seconds for the email field to load
-WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.ID, "email")))
 # Login flow
+# Wait up to 60 seconds for the email field to load (droptop auth is kinda bad sometimes)
+
+# Wait for email input to appear and fill with creds
+WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.ID, "email")))
+time.sleep(5)
 driver.find_element("id", "email").send_keys(emailLogin)
-time.sleep(10)
+
+# Wait for continue button to appear and click, cool trendy thing to do
+WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.ID, "continueEmailBtn")))
+time.sleep(5)
 driver.find_element("id", "continueEmailBtn").click()
-time.sleep(10)
+
+# Wait for password and enter creds
+WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.ID, "passwordInput")))
+time.sleep(5)
 driver.find_element("id", "passwordInput").send_keys(passwordLogin)
-time.sleep(10)
+
+# Wait for login button and click
+WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.ID, "loginBtn")))
 driver.find_element("id", "loginBtn").click()
 
 
