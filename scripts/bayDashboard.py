@@ -40,8 +40,7 @@ wait = WebDriverWait(driver, 10)
 # Initial website pull
 driver.get("https://droptop-app.com")
 
-# Login flow
-# Wait up to 60 seconds for the email field to load (droptop auth is kinda bad sometimes)
+# Login flow (with buffers bc droptop auth isnt the greatest...)
 
 # Wait for email input to appear and fill with creds
 WebDriverWait(driver, 60).until(EC.presence_of_element_located((By.ID, "email")))
